@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\WD_Course"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WD_Advanced"
+	}
+}

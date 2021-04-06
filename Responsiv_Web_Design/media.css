@@ -1,0 +1,17 @@
+.item {
+    border: 2px solid blue;
+}
+
+@media screen and(max-width:400px) {
+    .Menu {
+        border: 2px solid blue;
+        background-color: #ff53ff;
+    }
+}
+
+@media screen and (min-width:400px) {
+    .container {
+        float: left;
+        background-color: chartreuse;
+    }
+}

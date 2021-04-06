@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTieoutInEventListener</title>
+    <button class="btn">Click me</button>
+
+    <script>
+        //let btn = document.querySelector('button');
+
+        //btn.addEventListener('click', btn); {
+        //    console.log(`this === btn : ${this === btn}`);
+
+        //    setTimeout(function() {
+        //        console.log(`this === btn: ${this === btn}`);
+        //   }, 2000);
+        const btn = document.querySelector('.btn');
+
+        function setBackground() {
+            this.style.backgroundColor = 'red';
+        }
+
+        function btnBind() {
+            setTimeout(setBackground.bind(btn), 2000)
+        };
+
+        btn.addEventListener('click', btnBind);
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraversDOM</title>
+</head>
+
+<body>
+    <p>TASK: apply backgroundColor:"red" for each elelement in #startNode, which has class "red"</p>
+    <p>paragraph 1</p>
+    <p>TASK: apply backgroundColor:"yellow" for each elelement in #startNode, which has class "red"</p>
+    <p>paragraph 2</p>
+    <ul id="startNode">
+        <li>
+            <ol>
+                <li class="red">make me red</li>
+                <li>do not make me red</li>
+                <li class="yellow">make me yellow</li>
+                <li>do not make me yellow</li>
+
+            </ol>
+        </li>
+        <li class="red">make me red</li>
+        <li class="yellow">make me yellow</li>
+    </ul>
+
+    <ol>
+        <li class="red">do not make me red</li>
+        <li class="yellow">make me yellow</li>
+    </ol>
+    <script>
+        count = 0;
+
+        function doSomething(node) {
+            if (node.classList.contains("red")) {
+                node.style.backgroundColor = "red";
+                console.log(node.className);
+                count++;
+            } else(node.classList.contains("yellow"))
+            node.style.backgroundColor = "yellow";
+            console.log(node.className);
+            count++;
+
+        };
+
+        // HW: fix it
+        function traverseDOM(node) {
+            // get all HTML child nodes of node
+            let children = node.children;
+
+            // loop over children:
+            for (let i = 0; i < children.length; i++) {
+                let el = children[i];
+
+                // do something with each child element:
+                doSomething(el);
+
+                traverseDOM(el);
+            }
+
+        }
+
+        let startNode = document.querySelector("body");
+
+        traverseDOM(startNode);
+        console.log(count);
+    </script>
+</body>
+
+</html>
